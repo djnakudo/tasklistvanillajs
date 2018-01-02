@@ -73,11 +73,14 @@ const deletetask = (task)=>{
         sessionStorage.setItem('tasks',JSON.stringify(tasks));
 } 
 const addTask  = (e)=>{
-   tasks = initializetasks();
+    if(task.value!==''){
+        tasks = initializetasks();
    tasks.push(task.value);
    document.querySelector('.collection').innerHTML='';
     listupdate(tasks);
    sessionStorage.setItem('tasks',JSON.stringify(tasks));
+    }
+  
   e.preventDefault();
 }
 const initasks=initializetasks();
